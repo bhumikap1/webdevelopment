@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#booksTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#booksTable thead {
+    background-color: #333;
+    color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+#booksTable th, #booksTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#booksTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#booksTable tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+#booksTable tbody tr:hover {
+    background-color: #ddd;
+}

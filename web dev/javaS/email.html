@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect Email</title>
+</head>
+<body>
+    <p id="email">robin_singh@example.com</p>
+    <button id="protectButton">Protect Email</button>
+
+    <script>
+        function protectEmail(email)
+        {
+            const [user, domain] = email.split('@');
+            if (user.length <= 3) {
+                return user + '...' + '@' + domain;
+            }
+            return user.substring(0, 3) + '...' + '@' + domain;
+        }
+
+        // Event handler function for the button click event
+        function handleProtectEmail()
+        {
+            const emailElement = document.getElementById('email');
+            const originalEmail = emailElement.textContent;
+            const protectedEmail = protectEmail(originalEmail);
+            emailElement.textContent = protectedEmail;
+        }
+
+        // Adding event listener to the button
+        document.getElementById('protectButton').addEventListener('click', handleProtectEmail);
+
+        // Test the function with given data
+        console.log(protectEmail("robin_singh@example.com")); // Outputs: robin...@example.com
+    </script>
+</body>
+</html>

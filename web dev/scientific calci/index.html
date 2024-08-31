@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="head">
+    <h1 id="h1">SIMPLE SCIENTEFIC CALCULATOR</h1>
+    <div id="div1">
+        <br>
+        <input type="text" id="display" style="padding:10px ;font-size:20px;background-color:rgb(187, 225, 88);color: #000; width: 450px; margin-bottom: 5px; box-shadow: 2px 2px 2px white;" disabled>
+        <br>
+        <input type="button" value="1" onclick="appendToDisplay('1')">
+        <input type="button" value="2" onclick="appendToDisplay('2')">
+        <input type="button" value="3" onclick="appendToDisplay('3')">
+        <input type="button" value="C" onclick="clearDisplay()" style="background-color: rgb(251, 154, 154);">
+        <input type="button" value="<~" onclick="backspace()" style="background-color: rgb(251, 154, 154);">
+        <input type="button" value="=" onclick="calculate()"  style="background-color: rgb(251, 154, 154);">
+        <br>
+        <input type="button" value="4" onclick="appendToDisplay('4')">
+        <input type="button" value="5" onclick="appendToDisplay('5')">
+        <input type="button" value="6" onclick="appendToDisplay('6')">
+        <input type="button" value="-" onclick="appendToDisplay('-')">
+        <input type="button" value="%" onclick="appendToDisplay('%')">
+        <input type="button" value="cos" onclick="appendToDisplay('Math.cos(')">
+        <br>
+        <input type="button" value="7" onclick="appendToDisplay('7')">
+        <input type="button" value="8" onclick="appendToDisplay('8')">
+        <input type="button" value="9" onclick="appendToDisplay('9')">
+        <input type="button" value="*" onclick="appendToDisplay('*')">
+        <input type="button" value="n!"  onclick="appendToDisplay('factorial(')">
+        <input type="button" value="sin" onclick="appendToDisplay('Math.sin(')">
+        <br>
+        <input type="button" value="." onclick="appendToDisplay('.')">
+        <input type="button" value="0" onclick="appendToDisplay('0')">
+        <input type="button" value="," onclick="appendToDisplay(',')">
+        <input type="button" value="+" onclick="appendToDisplay('+')">
+        <input type="button" value="/" onclick="appendToDisplay('/')">
+        <input type="button" value="tan" onclick="appendToDisplay('Math.tan(')">
+        <br>
+        <input type="button" value="E" onclick="appendToDisplay('Math.E')">
+        <input type="button" value="pi" onclick="appendToDisplay('Math.PI')">
+        <input type="button" value="x^y" onclick="appendToDisplay('**')">
+        <input type="button" value="(" onclick="appendToDisplay('(')">
+        <input type="button" value=")" onclick="appendToDisplay(')')">
+        <input type="button" value="log" onclick="appendToDisplay('Math.log(')">
+        <br>
+        <input type="button" value="sqrt" onclick="appendToDisplay('Math.sqrt(')">
+        <input type="button" value="LN2" onclick="appendToDisplay('Math.LN2')">
+        <input type="button" value="LN10" onclick="appendToDisplay('Math.LN10')">
+        <input type="button" value="log2E" onclick="appendToDisplay('Math.LOG2E')">
+        <input type="button" value="log10E" onclick="appendToDisplay('Math.LOG10E')">
+        <input type="button" value="EXP" onclick="appendToDisplay('Math.exp(')">
+    </div>
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            var result = eval(document.getElementById('display').value);
+            document.getElementById('display').value = result;
+        }
+
+        function backspace() {
+            var displayValue = document.getElementById('display').value;
+            document.getElementById('display').value = displayValue.substring(0, displayValue.length - 1);
+        }
+
+        function factorial(n) {
+            if (n === 0 || n === 1)
+                return 1;
+            for (var i = n - 1; i >= 1; i--) {
+                n *= i;
+            }
+            return n;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+ <head>
+    <title>Calendar</title>
+    <script type="text/javascript">
+    function generateCalendar(){
+    var month = document.getElementById("month").value;
+    var year = document.getElementById("year").value;
+    var calendar = document.createElement("table");
+    calendar.border = "1";
+    var header = document.createElement("thead");
+    var headerRow = document.createElement("tr");
+    var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    for (var i = 0; i < daysOfWeek.length; i++) {
+    var day = document.createElement("th");
+    day.textContent = daysOfWeek[i];
+    headerRow.appendChild(day); }
+    header.appendChild(headerRow);
+    calendar.appendChild(header);
+    var body = document.createElement("tbody");
+    var date = new Date(year, month, 1);
+    var startDay = date.getDay();
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+    var day = 1;
+    for (var i = 0; i < 6; i++) {
+    var row = document.createElement("tr");
+    for (var j = 0; j < 7; j++) {
+    var cell = document.createElement("td");
+    if (i === 0 && j < startDay) {
+    cell.textContent = "";} 
+    else if (day > daysInMonth) {
+    cell.textContent = "";} 
+    else {
+    cell.textContent = day;
+    day++;}
+    row.appendChild(cell); }
+    body.appendChild(row); }
+    calendar.appendChild(body);
+    var calendarDiv = document.getElementById("calendar");
+    calendarDiv.innerHTML = "";
+    calendarDiv.appendChild(calendar); }
+ </script>
+ </head>
+ <body style="background-color: green;">
+ <h1>Calendar</h1>
+ <label for="year">Select Year:</label><br><br>
+ <select id="year">
+ <option value="2014">2014</option>
+ <option value="2015">2015</option>
+ <option value="2016">2016</option>
+ <option value="2017">2017</option>
+ </select><br><br>
+ <label for="month">Select Month:</label><br><br>
+ <select id="month">
+ <option value="0">January</option>
+ <option value="1">February</option>
+ <option value="2">March</option>
+ <option value="3">April</option>
+ <option value="4">May</option>
+ <option value="5">June</option>
+ <option value="6">July</option>
+ <option value="7">August</option>
+ <option value="8">September</option>
+ <option value="9">October</option>
+ <option value="10">November</optin>
+ <option value="11">December</option>
+ </select>
+ <button onclick="generateCalendar()">OK</button>
+ <div id="calendar"></div>
+ </body> </html>

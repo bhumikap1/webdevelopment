@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calci</title>
+    <style>
+        body
+        {
+            background-color: black;
+            text-align: center;
+        }
+        #heading1
+        {
+            text-align: center;
+            background-color: #af8731;
+            color:white;
+            height: 100px;
+            padding: 30px;
+            font-size: x-large;
+            margin-top: 0px;
+        }
+        #calci
+        {
+            background-color: #af8731;
+            height: 400px;
+            padding-top: 60px;
+        }
+        #fotter
+        {
+            background-color: #af8731;
+            height: 100px;
+            color: #af8731;
+        }
+        #inputfield
+        {
+            height: 40px;
+            width: 19%;
+            border-radius: 5px;
+        }
+        .btn
+        {
+            height: 10%;
+            width: 138px;
+            padding: 20px 30px;
+            margin: 3px;
+        }
+        button
+        {
+            height: 10%;
+            width: 40px;
+            padding: 20px 30px;
+            border-radius: 5px;
+            font-size: large;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="heading1">
+        <h1>Javascript Caclculator</h1>
+    </div>
+    <br>
+    <div id="calci">
+        <input type="text" id="inputfield" readonly/>
+        <br>
+        <button onclick="addToInput('7')">7</button>
+        <button onclick="addToInput('8')">8</button>
+        <button onclick="addToInput('9')">9</button>
+        <button onclick="addToInput('+')">+</button>
+        <br>
+        <button onclick="addToInput('4')">4</button>
+        <button onclick="addToInput('5')">5</button>
+        <button onclick="addToInput('6')">6</button>
+        <button onclick="addToInput('-')">-</button>
+        <br>
+        <button onclick="addToInput('1')">1</button>
+        <button onclick="addToInput('2')">2</button>
+        <button onclick="addToInput('3')">3</button>
+        <button onclick="addToInput('*')">*</button>
+        <br>
+        <button onclick="addToInput('0')">0</button>
+        <button onclick="addToInput('%')">%</button>
+        <button onclick="addToInput('.')">.</button>
+        <button onclick="addToInput('/')">/</button>
+        <br>
+        <button class="btn" onclick="result()">=</button>
+        <button class="btn" onclick="clearvalue()">C</button>
+    </div>
+    <br>
+    <div id="fotter">" "</div>
+    <script>
+        function addToInput(value)
+        {
+            document.getElementById('inputfield').value += value;
+        }
+        function clearvalue()
+        {
+            document.getElementById('inputfield').value = '';
+        }
+        function result()
+        {
+            var input = document.getElementById('inputfield').value;
+            var output = eval(input);
+            document.getElementById('inputfield').value = output;
+        }
+    </script>
+</body>
+</html>

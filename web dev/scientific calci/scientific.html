@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sceintific calci</title>
+    <style>
+        body
+        {
+            text-align: center;
+            align-items: center;
+        }
+        #div1
+        {
+            background-color: rgb(145, 117, 255);
+            height: 200%;
+            width: 600px;
+            padding: 30px;
+            margin-top:10%;
+            margin-left: 30%;
+        }
+        #div2
+        {
+            padding-top: 10px;
+            padding-bottom: 5px;
+            background-color: black;
+            height: 300px;
+            width: 350px;
+            margin-left: 130px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 1px 1px gray;
+        }
+        #inputfield
+        {
+            width: 330px;
+            height: 10%;
+            border-radius: 5px;
+            background-color:rgb(187, 225, 88)
+        }
+        .btn
+        {
+            background-color:  rgb(251, 154, 154);
+        }
+        button
+        {
+            padding: 5px;
+            margin: 2px;
+            width: 50px;
+            height: 13%;
+            border-radius: 5px;
+            box-shadow: 1px 1px gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <h1 id="head1">SIMPLE SCIENTIFIC CALCULATOR</h1>
+        <div id="div2">
+            <input type="text" id="inputfield" readonly/>
+            <br>
+            <button onclick="addToInput('1')">1</button>
+            <button onclick="addToInput('2')">2</button>
+            <button onclick="addToInput('3')">3</button>
+            <button class="btn" onclick="clearInput()">C</button>
+            <button class="btn" onclick="backSpace()"><-</button>
+            <button class="btn" onclick="result()">=</button>
+            <br>
+            <button onclick="addToInput('4')">4</button>
+            <button onclick="addToInput('5')">5</button>
+            <button onclick="addToInput('6')">6</button>
+            <button onclick="addToInput('-')">-</button>
+            <button onclick="addToInput('%')">%</button>
+            <button onclick="addToInput('Math.cos(')">cos</button>
+            <br>
+            <button onclick="addToInput('7')">7</button>
+            <button onclick="addToInput('8')">8</button>
+            <button onclick="addToInput('9')">9</button>
+            <button onclick="addToInput('*')">*</button>
+            <button onclick="addToInput('fact(')">n!</button>
+            <button onclick="addToInput('Math.sin(')">sin</button>
+            <br>
+            <button onclick="addToInput('.')">.</button>
+            <button onclick="addToInput('0')">0</button>
+            <button onclick="addToInput(',')">,</button>
+            <button onclick="addToInput('+')">+</button>
+            <button onclick="addToInput('/')">/</button>
+            <button onclick="addToInput('Math.tan(')">tan</button>
+            <br>
+            <button onclick="addToInput('Math.E')">E</button>
+            <button onclick="addToInput('Math.PI')">pi</button>
+            <button onclick="addToInput('**')">x^y</button>
+            <button onclick="addToInput('(')">(</button>
+            <button onclick="addToInput(')')">)</button>
+            <button onclick="addToInput('Math.log(')">log</button>
+            <br>
+            <button onclick="addToInput('Math.sqrt(')">sqrt</button>
+            <button onclick="addToInput('Math.LN2')">LN2</button>
+            <button onclick="addToInput('Math.LN10')">LN10</button>
+            <button onclick="addToInput('Math.LOG2E')">log2E</button>
+            <button onclick="addToInput('Math.LOG10E')">log10E</button>
+            <button onclick="addToInput('Math.EXP')">EXP</button>
+        </div>
+    </div>
+    <script>
+        function addToInput(value)
+        {
+            document.getElementById('inputfield').value += value;
+        }
+        function clearInput()
+        {
+            document.getElementById('inputfield').value = '';
+        }
+        function result()
+        {
+            var output = eval(document.getElementById('inputfield').value);
+            document.getElementById('inputfield').value = output;
+        }
+        function backSpace()
+        {
+            var res = document.getElementById('inputfield').value;
+            document.getElementById('inputfield').value = res.substring(0,res.length-1);
+        }
+        function fact(n)
+        {
+            if (n === 0 || n === 1)
+            {
+                return 1;
+            }
+            else
+            {
+                for(var i = n-1; i >= 1; i--)
+                {
+                    n *=i;
+                }
+            }
+            return n;
+        }
+    </script>
+</body>
+</html>

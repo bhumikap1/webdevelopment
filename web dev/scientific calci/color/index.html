@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background_color</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="click" onclick = "myfun()" style="padding:0;border:none;background:none;"><h1>Click me to change my color!</h1></button>
+    <script>
+
+    function ChangeColor(color)
+    {
+    document.body.style.background = color;
+    }
+    function myfun()
+    {
+    ChangeColor('brown');
+    }
+    </script>
+</body>
+</html>
